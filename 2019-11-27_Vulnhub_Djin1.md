@@ -2,9 +2,9 @@
 layout: post
 title: Djin1 Writeup
 date: 2019-11-28
-author: n0khodsia
+author: <a href="https://n0khodsia.github.io/">n0khodsia</a>
 ---
-
+<title>test</title>
 <h1 align="center">
   <br>
   <a href="https://www.vulnhub.com/entry/djinn-1,397/">
