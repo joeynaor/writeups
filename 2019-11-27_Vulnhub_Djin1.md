@@ -1,8 +1,5 @@
----
-layout: post
-title: Djin1 Writeup
-date: 2019-11-27
----
+
+
 <h1 align="center">
   <br>
   <a href="https://www.vulnhub.com/entry/djinn-1,397/">
@@ -384,6 +381,11 @@ Thanks to my fellow teammates in @m0tl3ycr3w for betatesting! :-)
 ## This has been a fun challenge, covering various aspects of cybersecurity.
 ## Thank you so much <a href="https://twitter.com/0xmzfr">@0xmzfr</a> for this amazing CTF!
 
+***
+
+---
+title: Djin1 Writeup
+---
 
 ***
 <p align="center">Written by n0khodsia</p>
