@@ -2,7 +2,7 @@
 layout: post
 title: Djin1 Writeup
 date: 2019-11-28
-author: <a href="https://n0khodsia.github.io/">n0khodsia</a>
+author: [n0khodsia](https://n0khodsia.github.io/)
 ---
 <title>test</title>
 <h1 align="center">
