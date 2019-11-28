@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Djin: 1 Writeup
+title: Djin1 Writeup
 date: 2019-11-27
 ---
 <h1 align="center">
