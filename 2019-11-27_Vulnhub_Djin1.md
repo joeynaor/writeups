@@ -19,7 +19,7 @@
 For this CTF I'll use Kali Linux on VMWare.
 After launching the VM, the following screen pops off, giving us a head-start with the machine's IP:
 
-![](images/ip.png)
+![](images/djin1/ip.png)
 
 In our machine, we match the hostname `ctf` to the IP:
 ```bash
@@ -52,7 +52,7 @@ As we can see, we have 4 different services: FTP(21), SSH(22), Unknown(1337) and
 
 ## FTP
 Let's try and connect to the FTP server with anonymous account (and no password)  
-![](images/ftp.png)
+![](images/djin1/ftp.png)
 
 It works, and we have 3 different files `message.txt`, `gamee.txt` & `creds.txt`
 ```bash
@@ -75,7 +75,7 @@ root@kali:~# nc ctf 1337
 | |  _ / _` | '_ ` _ \ / _ \   | | | | '_ ` _ \ / _ \
 | |_| | (_| | | | | | |  __/   | | | | | | | | |  __/
  \____|\__,_|_| |_| |_|\___|   |_| |_|_| |_| |_|\___|
-                                                     
+
 
 Let's see how good you are with simple maths
 Answer my questions 1000 times and I'll give you your gift.
@@ -88,7 +88,7 @@ root@kali:~# nc ctf 1337
 | |  _ / _` | '_ ` _ \ / _ \   | | | | '_ ` _ \ / _ \
 | |_| | (_| | | | | | |  __/   | | | | | | | | |  __/
  \____|\__,_|_| |_| |_|\___|   |_| |_|_| |_| |_|\___|
-                                                     
+
 
 Let's see how good you are with simple maths
 Answer my questions 1000 times and I'll give you your gift.
