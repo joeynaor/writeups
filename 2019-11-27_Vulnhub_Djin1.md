@@ -2,23 +2,20 @@
 layout: post
 title: Djin1 Writeup
 date: 2019-11-28
-author: [n0khodsia](https://n0khodsia.github.io/)
+author: n0khodsia
 ---
-<title>test</title>
+
 <h1 align="center">
   <br>
   <a href="https://www.vulnhub.com/entry/djinn-1,397/">
     Vulnhub's Djin: 1
   </a>
-  <br>
 </h1>
 
 <h4 align="center">
   CTF By <a href="https://twitter.com/0xmzfr">0xmzfr</a>
 <br>
   Walkthrough By <a href="https://n0khodsia.github.io/">n0khodsia</a>
-  <br>
-  27/11/2019
 </h4>
 
 ***
