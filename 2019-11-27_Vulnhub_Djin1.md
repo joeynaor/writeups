@@ -1,3 +1,8 @@
+---
+layout: post
+title: Djin: 1 Writeup
+date: 2019-11-27
+---
 <h1 align="center">
   <br>
   <a href="https://www.vulnhub.com/entry/djinn-1,397/">
