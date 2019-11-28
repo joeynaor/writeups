@@ -1,4 +1,9 @@
-
+---
+layout: post
+title: Djin1 Writeup
+date: 2019-11-28
+author: n0khodsia
+---
 
 <h1 align="center">
   <br>
@@ -383,12 +388,7 @@ Thanks to my fellow teammates in @m0tl3ycr3w for betatesting! :-)
 
 ***
 
----
-layout: post
-title: Djin1 Writeup
-date: 2019-11-28
-author: n0khodsia
----
+
 
 ***
 <p align="center">Written by n0khodsia</p>
