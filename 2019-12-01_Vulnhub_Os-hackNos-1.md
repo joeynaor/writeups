@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Os-hackNos-1 Writeup
+title: Os-hackNos1 Writeup
 date: 2019-12-01
 author: n0khodsia
 ---
