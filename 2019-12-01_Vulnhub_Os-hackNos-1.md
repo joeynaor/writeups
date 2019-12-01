@@ -22,6 +22,9 @@ author: n0khodsia
 
 
 ## LAUNCH
+![](https://www.vulnhub.com/media/img/entry/os-hacknos-01.png)
+
+
 For this CTF i'll use Kali Linux VM on VMWare, and Os-hackNos on VirtualBox (It wont work on VMWare).  
 First we use `netdiscover` to find out the machine's IP:
 ```bash
