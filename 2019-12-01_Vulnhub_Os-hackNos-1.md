@@ -7,7 +7,7 @@ author: n0khodsia
 
 <h1 align="center">
   <br>
-  <a href="https://www.vulnhub.com/entry/hacknos-os-hacknos,401/">
+  <a href="https://www.vulnhub.com/entry/hacknos-os-hacknos,401/" target="_blank">
     Vulnhub's Os-hackNos: 1
   </a>
 </h1>
