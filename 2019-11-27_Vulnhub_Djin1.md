@@ -7,7 +7,7 @@ author: n0khodsia
 
 <h1 align="center">
   <br>
-  <a href="https://www.vulnhub.com/entry/djinn-1,397/">
+  <a href="https://www.vulnhub.com/entry/djinn-1,397/" target="_blank">
     Vulnhub's Djin: 1
   </a>
 </h1>
