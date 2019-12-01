@@ -13,9 +13,9 @@ author: n0khodsia
 </h1>
 
 <h4 align="center">
-  CTF By <a href="https://twitter.com/0xmzfr">0xmzfr</a>
+  CTF By <a href="https://twitter.com/0xmzfr" target="_blank">0xmzfr</a>
 <br>
-  Walkthrough By <a href="https://n0khodsia.github.io/">n0khodsia</a>
+  Walkthrough By <a href="https://n0khodsia.github.io/" target="_blank">n0khodsia</a>
 </h4>
 
 ***
