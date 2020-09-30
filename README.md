@@ -1,4 +1,7 @@
 # Write-ups, Walkthroughs & more
+[01/09/2020] (JFrog) [How to resolve the common “resolution will not be reattempted” Maven error
+](https://jfrog.com/knowledge-base/how-to-resolve-the-common-resolution-will-not-be-reattempted-maven-error/)
+
 [29/07/2020] (JFrog) [How to find out the number of vulnerabilities in an artifact?](https://jfrog.com/knowledge-base/how-to-find-out-the-number-of-vulnerabilities-in-an-artifact/)
 
 [11/06/2020] (JFrog) [Using an EC2 Load Balancer in front of Artifactory Docker repository](https://jfrog.com/knowledge-base/using-an-ec2-load-balancer-in-front-of-artifactory-docker-repository/)
