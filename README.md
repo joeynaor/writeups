@@ -1,4 +1,8 @@
 # Write-ups, Walkthroughs & more
+
+[05/11/2020] (JFrog) [How to build and deploy artifacts using JFrog CLI in a Jenkins pipeline
+](https://jfrog.com/knowledge-base/how-to-build-and-deploy-artifacts-using-jfrog-cli-in-a-jenkins-pipeline/)
+
 [29/09/2020] (JFrog) [Artifactory is connected to an unencrypted RDS PostgreSQL Database](https://jfrog.com/knowledge-base/artifactory-is-connected-to-an-unencrypted-rds-postgresql-database/)
 
 [01/09/2020] (JFrog) [How to resolve the common “resolution will not be reattempted” Maven error
