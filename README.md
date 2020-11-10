@@ -1,5 +1,4 @@
 # Write-ups, Walkthroughs & more
-
 [05/11/2020] (JFrog) [How to build and deploy artifacts using JFrog CLI in a Jenkins pipeline
 ](https://jfrog.com/knowledge-base/how-to-build-and-deploy-artifacts-using-jfrog-cli-in-a-jenkins-pipeline/)
 
