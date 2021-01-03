@@ -1,6 +1,6 @@
 # Write-ups, Walkthroughs & more
 
-[18/11/20] (JFrog Video) [How to upload and download artifacts using Artifactory REST API?](https://www.youtube.com/watch?v=peSN5YroC8M&ab_channel=JFrog)
+[18/11/20] (JFrog Video) [How to upload and download artifacts using Artifactory REST API?](https://www.youtube.com/watch?v=peSN5YroC8M&ab_channel=JFrog){:target="_blank" rel="noopener"}
 
 [05/11/20] (JFrog KB) [How to build and deploy artifacts using JFrog CLI in a Jenkins pipeline
 ](https://jfrog.com/knowledge-base/how-to-build-and-deploy-artifacts-using-jfrog-cli-in-a-jenkins-pipeline/)
