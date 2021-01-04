@@ -1,6 +1,6 @@
 # Write-ups, Walkthroughs & more
 
-[04-01-21] (JFrog KB) [How can an antivirus affect Artifactory?](https://jfrog.com/knowledge-base/how-can-an-antivirus-affect-artifactory/){:target="_blank" rel="noopener"}
+[04/01/21] (JFrog KB) [How can an antivirus affect Artifactory?](https://jfrog.com/knowledge-base/how-can-an-antivirus-affect-artifactory/){:target="_blank" rel="noopener"}
 
 [18/11/20] (JFrog Video) [How to upload and download artifacts using Artifactory REST API?](https://www.youtube.com/watch?v=peSN5YroC8M&ab_channel=JFrog){:target="_blank" rel="noopener"}
 
