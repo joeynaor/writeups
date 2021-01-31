@@ -13,14 +13,13 @@
 
 [29/09/20] (JFrog KB) [Artifactory is connected to an unencrypted RDS PostgreSQL Database](https://jfrog.com/knowledge-base/artifactory-is-connected-to-an-unencrypted-rds-postgresql-database/){:target="_blank" rel="noopener"}
 
-[01/09/20] (JFrog KB) [How to resolve the common “resolution will not be reattempted” Maven error
-](https://jfrog.com/knowledge-base/how-to-resolve-the-common-resolution-will-not-be-reattempted-maven-error/){:target="_blank" rel="noopener"}
+[01/09/20] (JFrog KB) [ARTIFACTORY: How to Resolve the Common Maven Error: resolution will not be reattempted](https://jfrog.com/knowledge-base/how-to-resolve-the-common-resolution-will-not-be-reattempted-maven-error/){:target="_blank" rel="noopener"}
 
-[29/07/20] (JFrog KB) [How to find out the number of vulnerabilities in an artifact?](https://jfrog.com/knowledge-base/how-to-find-out-the-number-of-vulnerabilities-in-an-artifact/){:target="_blank" rel="noopener"}
+[29/07/20] (JFrog KB) [ARTIFACTORY: How to Determine How Many Vulnerabilities There Are in a Given Artifact](https://jfrog.com/knowledge-base/how-to-find-out-the-number-of-vulnerabilities-in-an-artifact/){:target="_blank" rel="noopener"}
 
-[11/06/20] (JFrog KB) [Using an AWS Application Load Balancer in front of Artifactory Docker repository](https://jfrog.com/knowledge-base/using-an-ec2-load-balancer-in-front-of-artifactory-docker-repository/){:target="_blank" rel="noopener"}
+[11/06/20] (JFrog KB) [ARTIFACTORY: How to Use an AWS Application Load Balancer in Front of an Artifactory Docker Repository](https://jfrog.com/knowledge-base/using-an-ec2-load-balancer-in-front-of-artifactory-docker-repository/){:target="_blank" rel="noopener"}
 
-[11/06/20] (JFrog KB) [Automating the post-installation steps of a new Artifactory instance](https://jfrog.com/knowledge-base/automating-the-post-installation-steps-of-a-new-artifactory-instance/){:target="_blank" rel="noopener"}
+[11/06/20] (JFrog KB) [ARTIFACTORY: Automating the Post-Installation Steps of a New Artifactory Instance](https://jfrog.com/knowledge-base/automating-the-post-installation-steps-of-a-new-artifactory-instance/){:target="_blank" rel="noopener"}
 
 [01/12/19] [Vulnhub's hackNos: Os-hackNos: 1 CTF Writeup & Walkthough](2019-12-01_Vulnhub_Os-hackNos-1.md){:target="_blank" rel="noopener"}  
 
