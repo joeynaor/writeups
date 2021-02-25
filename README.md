@@ -23,7 +23,7 @@
 
 [29/07/20] (JFrog KB) [How to Determine How Many Vulnerabilities There Are in a Given Artifact](https://jfrog.com/knowledge-base/how-to-find-out-the-number-of-vulnerabilities-in-an-artifact/){:target="_blank" rel="noopener"}
 
-[11/06/20] (JFrog KB) [How to Use an AWS Application Load Balancer in Front of an Artifactory Docker Repository](https://jfrog.com/knowledge-base/using-an-ec2-load-balancer-in-front-of-artifactory-docker-repository/){:target="_blank" rel="noopener"}
+[11/06/20] (JFrog KB) [How to Use an AWS ALB in Front of an Artifactory Docker Repository](https://jfrog.com/knowledge-base/using-an-ec2-load-balancer-in-front-of-artifactory-docker-repository/){:target="_blank" rel="noopener"}
 
 [11/06/20] (JFrog KB) [Automating the Post-Installation Steps of a New Artifactory Instance](https://jfrog.com/knowledge-base/automating-the-post-installation-steps-of-a-new-artifactory-instance/){:target="_blank" rel="noopener"}
 
