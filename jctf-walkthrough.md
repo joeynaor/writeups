@@ -130,7 +130,7 @@ After that, we manually brute-forced our way to the next clue by traversing the 
 
 The above text mentions a security vulnerability for Artifactory versions up to 6.8.6.
 
-First, we used our internal JIRA to find the vulnerability. However, we eventually used this ![Artifactory Hacking Guide](https://www.errno.fr/artifactory/Attacking_Artifactory#cve-2019-9733-authentication-bypass-686) to get some context on how to use the exploit.
+First, we used our internal JIRA to find the vulnerability. However, we eventually used this [Artifactory Hacking Guide](https://www.errno.fr/artifactory/Attacking_Artifactory#cve-2019-9733-authentication-bypass-686) to get some context on how to use the exploit.
 
 ![](images/jctf/walkthrough/19.png)
 
