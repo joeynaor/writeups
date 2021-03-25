@@ -1,23 +1,9 @@
 ---
 layout: post
-title: JCTF
+title: JCTF Walkthrough
 date: 2021-03-25
-author: Joey Naor
+author: The JCTF Winning Team
 ---
-
-<h1 align="center">JFrog Capture The Flag Challenge</h1>
-<h3 align="center">Walkthrough</h3>
-<h4 align="center">By the JCTF winning team</h4>
-
-***
-
-## Opening words:
-![](images/jctf/walkthrough/.png)
-
-
-
-
-
 
 ## Part 1
 At the beginning of the first part of the challenge, the first screen presents binary code that needs to be translated to ASCII to reveal the next clue. 
