@@ -79,7 +79,7 @@ AWS RDS database stored the dynamic data and only communicated with the platform
 
 ## ⭐ The Gameplay:
 
-I decided that this section should be written by someone who actually participated in the challenge. You can refer to ![this writeup](https://joeynaor.github.io/writeups/jctf-walkthrough.html) which is a gameplay walkthrough written by the participants of the winning team.
+I decided that this section should be written by someone who actually participated in the challenge. You can refer to [this writeup](https://joeynaor.github.io/writeups/jctf-walkthrough.html) which is a gameplay walkthrough written by the participants of the winning team.
 
 ## The Aftermath:
 The challenge started with 57 teams, 114 participants, and 132 users in the #jctf2020 Slack channel. The chart below shows the progress of teams based on how much time has passed since the challenge began.
