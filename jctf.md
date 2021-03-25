@@ -1,15 +1,9 @@
 ---
 layout: post
-title: JCTF
+title: JFrog Capture The Flag Challenge Project Writeup
 date: 2021-03-25
 author: Joey Naor
 ---
-
-<h1 align="center">JFrog Capture The Flag Challenge</h1>
-<h3 align="center">Project Writeup</h3>
-<h4 align="center">By Joey Naor</h4>
-
-***
 
 ## Opening words:
 I was always passionate about creating things. I specifically recall that at a very young age, I kept fantasizing day and night about creating my own game that would be played by people around the world.
@@ -51,6 +45,7 @@ This teaser had given people a taste of a small technical puzzle which implies s
 ## The Announcement:
 
 When the countdown had hit zero after three days, all JFrog employees received the official announcement email of the JCTF challenge.
+
 ![](images/jctf/4.png)
 
 ## The Platform:
