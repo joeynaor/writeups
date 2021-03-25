@@ -16,7 +16,7 @@ Following months of research and development, in parallel to my day-to-day work 
 
 
 ## The Tease:
-At a very early stage of planning the challenge, I insisted that the first impression will go a long way, which means that a good, exciting teaser is needed. I decided to use my favorite tool - mystery.
+At a very early stage of planning the challenge, I insisted that the first impression will go a long way, which means that a good, exciting teaser is needed. I decided to use my favorite tool - **mystery**.
 
 With the help of our IT department, we have created a new Slack user, called “A Lost Frog”. This fake user didn’t have any clear information in its profile page, which is highly unusual in a professional working environment.
 
