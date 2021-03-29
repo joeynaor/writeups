@@ -91,7 +91,7 @@ It was exciting to see that some teams kept playing even after the 3 hours windo
 
 ![](images/jctf/7.png)
 
-Regardless of the grand prizes to the winning teams, each team who solved part 1 received a JCTF hoodie 
+In additional to a $6000 prize pool for the 3 winning teams, each team that solved part 1 received a JCTF hoodie: 
 
 ![](images/jctf/8.jpg)
 
