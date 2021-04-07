@@ -71,10 +71,10 @@ The project was built on top of AWS, including 4 EC2 machines running Ubuntu Lin
 Each EC2 machine also acted as a web server, running NGINX with PHP.
 
 * EC2 #1 acted as the JCTF platform (website)
-* EC2 #2 included both part 1 and 3. This was designed that way because part 1 was very lightweight (plain webpages), and the other parts had certain software that could collide badly if installed twice on the same machine.
+* EC2 #2 included both part 1 and 3. This was designed that way because part 1 was very lightweight (plain webpages), and the other parts had certain software that could collide badly if installed on the same machine.
 * EC2 #3 included part 2 and its dedicated software
 * EC2 #4 was a much smaller machine which held the teaser web server
-AWS RDS database stored the dynamic data and only communicated with the platform in EC2 #1
+* AWS RDS database stored the dynamic data and only communicated with the platform in EC2 #1
 
 
 ## ⭐ The Gameplay:
