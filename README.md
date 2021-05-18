@@ -1,5 +1,7 @@
 # Write-ups, Walkthroughs & more
 
+[11/05/21] (JFrog KB) [ARTIFACTORY: “Blocked script execution”](https://jfrog.com/knowledge-base/artifactory-blocked-script-execution/){:target="_blank" rel="noopener"}
+
 [23/02/21] (JFrog KB) [ARTIFACTORY: Mirroring pkg.go.dev](https://jfrog.com/knowledge-base/artifactory-mirroring-pkg-go-dev/){:target="_blank" rel="noopener"}
 
 [21/02/21] (JFrog KB) [ARTIFACTORY 7: Decrypting the DB password in system.yaml](https://jfrog.com/knowledge-base/artifactory-7-decrypting-the-db-password-in-system-yaml/){:target="_blank" rel="noopener"}
