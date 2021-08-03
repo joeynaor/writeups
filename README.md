@@ -1,5 +1,7 @@
 # Write-ups, Walkthroughs & more
 
+[02/08/21] (JFrog KB) [ARTIFACTORY: Mirroring Red Hat Container Registries](https://jfrog.com/knowledge-base/artifactory-mirroring-red-hat-container-registries/){:target="_blank" rel="noopener"}
+
 [11/05/21] (JFrog KB) [ARTIFACTORY: “Blocked script execution”](https://jfrog.com/knowledge-base/artifactory-blocked-script-execution/){:target="_blank" rel="noopener"}
 
 [23/02/21] (JFrog KB) [ARTIFACTORY: Mirroring pkg.go.dev](https://jfrog.com/knowledge-base/artifactory-mirroring-pkg-go-dev/){:target="_blank" rel="noopener"}
