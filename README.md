@@ -1,5 +1,9 @@
 # Write-ups, Walkthroughs & more
 
+[02/08/21] (JFrog KB) [XRAY: Trusting Self-Signed Certificates](https://jfrog.com/knowledge-base/XRAY-Trusting-Self-Signed-Certificates/){:target="_blank" rel="noopener"}
+
+[02/08/21] (JFrog KB) [ARTIFACTORY: “This artifact is not cached” Warning](https://jfrog.com/knowledge-base/ARTIFACTORY-This-artifact-is-not-cached-Warning/){:target="_blank" rel="noopener"}
+
 [02/08/21] (JFrog KB) [ARTIFACTORY: Mirroring Red Hat Container Registries](https://jfrog.com/knowledge-base/artifactory-mirroring-red-hat-container-registries/){:target="_blank" rel="noopener"}
 
 [11/05/21] (JFrog KB) [ARTIFACTORY: “Blocked script execution”](https://jfrog.com/knowledge-base/artifactory-blocked-script-execution/){:target="_blank" rel="noopener"}
