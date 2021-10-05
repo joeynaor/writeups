@@ -1,6 +1,6 @@
 # Write-ups, Walkthroughs & more
 
-[04/10/21] (JFrog KB) [ARTIFACTORY: Connecting to Google Cloud PostgreSQL](https://jfrog.com/knowledge-base/ARTIFACTORY-Connecting-to-Google-Cloud-PostgreSQL/)
+[04/10/21] (JFrog KB) [ARTIFACTORY: Connecting to Google Cloud PostgreSQL](https://jfrog.com/knowledge-base/ARTIFACTORY-Connecting-to-Google-Cloud-PostgreSQL/){:target="_blank" rel="noopener"}
 
 [02/08/21] (JFrog KB) [XRAY: Trusting Self-Signed Certificates](https://jfrog.com/knowledge-base/XRAY-Trusting-Self-Signed-Certificates/){:target="_blank" rel="noopener"}
 
