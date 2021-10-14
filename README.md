@@ -1,5 +1,9 @@
 # Write-ups, Walkthroughs & more
 
+[12/10/21] (JFrog KB) [ARTIFACTORY: LDAP Error: “Name cannot contain spaces or special character”](hhttps://jfrog.com/knowledge-base/artifactory-ldap-error-name-cannot-contain-spaces-or-special-character/){:target="_blank" rel="noopener"}
+
+[12/10/21] (JFrog KB) [ARTIFACTORY: Using ‘useInstanceCredentials’ in the ‘cluster-google-storage’ chain template](https://jfrog.com/knowledge-base/artifactory-using-useinstancecredentials-in-the-cluster-google-storage-chain-template-binarystore-xml/){:target="_blank" rel="noopener"}
+
 [04/10/21] (JFrog KB) [ARTIFACTORY: Connecting to Google Cloud PostgreSQL](https://jfrog.com/knowledge-base/ARTIFACTORY-Connecting-to-Google-Cloud-PostgreSQL/){:target="_blank" rel="noopener"}
 
 [02/08/21] (JFrog KB) [XRAY: Trusting Self-Signed Certificates](https://jfrog.com/knowledge-base/XRAY-Trusting-Self-Signed-Certificates/){:target="_blank" rel="noopener"}
