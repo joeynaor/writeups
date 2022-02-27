@@ -1,5 +1,7 @@
 # Write-ups, Walkthroughs & more
 
+[24/02/22] (JFrog Blog) [Customizing the JFrog Xray Horizontal Pod Autoscaler](https://jfrog.com/blog/customizing-the-jfrog-xray-horizontal-pod-autoscaler/)
+
 [12/10/21] (JFrog KB) [ARTIFACTORY: LDAP Error: “Name cannot contain spaces or special character”](https://jfrog.com/knowledge-base/artifactory-ldap-error-name-cannot-contain-spaces-or-special-character/){:target="_blank" rel="noopener"}
 
 [12/10/21] (JFrog KB) [ARTIFACTORY: Using ‘useInstanceCredentials’ in the ‘cluster-google-storage’ chain template](https://jfrog.com/knowledge-base/artifactory-using-useinstancecredentials-in-the-cluster-google-storage-chain-template-binarystore-xml/){:target="_blank" rel="noopener"}
