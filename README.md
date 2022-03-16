@@ -1,8 +1,8 @@
 # Write-ups, Walkthroughs & more
 
-[16/03/22] (JFrog KB) [plugin [search-guard-7] was built for Elasticsearch version X but version Y is required](https://jfrog.com/knowledge-base/mission-control-insight-plugin-search-guard-7-was-built-for-elasticsearch-version-x-but-version-y-is-required/)
+[16/03/22] (JFrog KB) [plugin [search-guard-7] was built for Elasticsearch version X but version Y is required](https://jfrog.com/knowledge-base/mission-control-insight-plugin-search-guard-7-was-built-for-elasticsearch-version-x-but-version-y-is-required/){:target="_blank" rel="noopener"}
 
-[24/02/22] (JFrog Blog) [Customizing the JFrog Xray Horizontal Pod Autoscaler](https://jfrog.com/blog/customizing-the-jfrog-xray-horizontal-pod-autoscaler/)
+[24/02/22] (JFrog Blog) [Customizing the JFrog Xray Horizontal Pod Autoscaler](https://jfrog.com/blog/customizing-the-jfrog-xray-horizontal-pod-autoscaler/){:target="_blank" rel="noopener"}
 
 [12/10/21] (JFrog KB) [ARTIFACTORY: LDAP Error: “Name cannot contain spaces or special character”](https://jfrog.com/knowledge-base/artifactory-ldap-error-name-cannot-contain-spaces-or-special-character/){:target="_blank" rel="noopener"}
 
