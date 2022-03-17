@@ -1,5 +1,7 @@
 # Write-ups, Walkthroughs & more
 
+[17/03/22] (JFrog KB) [XRAY: Fresh installation prompts 503 errors](https://jfrog.com/knowledge-base/xray-fresh-installation-prompts-503-errors/){:target="_blank" rel="noopener"}
+
 [16/03/22] (JFrog KB) [plugin [search-guard-7] was built for Elasticsearch version X but version Y is required](https://jfrog.com/knowledge-base/mission-control-insight-plugin-search-guard-7-was-built-for-elasticsearch-version-x-but-version-y-is-required/){:target="_blank" rel="noopener"}
 
 [24/02/22] (JFrog Blog) [Customizing the JFrog Xray Horizontal Pod Autoscaler](https://jfrog.com/blog/customizing-the-jfrog-xray-horizontal-pod-autoscaler/){:target="_blank" rel="noopener"}
