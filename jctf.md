@@ -2,6 +2,7 @@
 layout: post
 title: JFrog Capture The Flag Challenge Project Writeup
 date: 2021-03-25
+image: 'https://joeynaor.github.io/writeups/images/jctf/8.jpg'
 author: Joey Naor
 ---
 
